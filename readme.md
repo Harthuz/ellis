@@ -53,17 +53,37 @@ Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e
 
 ## Rodando Docker
 
-- faz o build da imagem
+```shell
 docker build -t alura-api-escola .
+```
 
-- roda a imagem
-docker run -d -p 8000:8000 --name api alura-api-escola 
+*Faz o build da imagem com o nome/tag `alura-api-escola`.*
 
-- encontrar o nome ou ID do container com
+---
+
+```shell
+docker run -d -p 8000:8000 --name api alura-api-escola
+```
+
+*Roda a imagem criada em segundo plano (`-d`), expondo a porta 8000 e nomeando o container como `api`.*
+
+---
+
+```shell
 docker ps
+```
 
-- parar um ou mais containers que estão em execução
+*Lista os containers em execução. Mostra nome e ID do container.*
+
+---
+
+```shell
 docker stop NOME_OU_ID_DO_CONTAINER
+```
+
+*Para um ou mais containers que estão em execução, usando o nome ou o ID.*
+
+
 
 ---
 
