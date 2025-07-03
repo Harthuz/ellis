@@ -1,0 +1,18 @@
+services:
+  # Serviço da sua aplicação web (baseado no seu Dockerfile)
+  app:
+    # Constrói a imagem a partir do Dockerfile na pasta atual ('.')
+    build: .
+    container_name: alura-api-escola
+    ports:
+      # Mapeia a porta 8000 do seu computador para a porta 8000 do contêiner,
+      # que é a porta que o Uvicorn está usando, conforme definido no Dockerfile.
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual ('.') para dentro do contêiner no diretório /app.
+      # Isso permite que as alterações no seu código local sejam refletidas
+      # instantaneamente no contêiner, ideal para desenvolvimento.
+      - .:/app
+    # (Opcional) Adicione aqui quaisquer variáveis de ambiente que sua aplicação precise.
+    # environment:
+    #   - MINHA_VARIAVEL=meu_valor
